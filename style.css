@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(#a2000a, #cf0000);
+}
+.snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.snow-container .sonwFlake {
+  position: absolute;
+  color: #fff;
+  font-size: 1em;
+  animation: fall linear infinite forwards;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+.snow-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: url(imags/tree.png);
+}
+.circle {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 350px;
+  background: #fff;
+  border-radius: 50%;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  inset: -200px -300px;
+  background: url(imags/santa.png);
+  background-size: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: animateSanta 5s ease-in-out infinite;
+}
+@keyframes animateSanta {
+  0%,
+  100% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+}

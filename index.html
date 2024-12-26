@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="Icon" href="&#10052;">
+</head>
+<body>
+    <div class="snow-container">
+        <div class="circle"></div>
+    </div>
+    <script>
+        let snowContainer = document.querySelector('.snow-container');
+        function createSnowFlake(){
+            snowFlake = document.createElement('div');
+            snowFlake.classList.add('sonwFlake');
+            snowFlake.textContent = '❄';
+            snowFlake.style.left = `${Math.random() * 100}vw`;
+            snowFlake.style.fontSize = `${Math.random() * 12 + 10}px`;
+            snowFlake.style.opacity = Math.random();
+            snowFlake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            snowContainer.appendChild(snowFlake);
+            setTimeout(() => {
+                snowFlake.remove();
+            },5000);
+        }
+        setInterval(createSnowFlake,50);
+    </script>
+</body>
+</html>
